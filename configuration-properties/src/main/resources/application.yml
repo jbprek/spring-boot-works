@@ -1,0 +1,23 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: env
+      base-path: /actuator
+config:
+  demo:
+    delivery: dev
+    product: bullshit
+    date: 2020-02-16
+    products:
+      - tomatos
+      - cucumber
+      - other
+    deadlines:
+      - 2020-02-16
+      - 2020-02-17
+    simplepairs:
+      - "key1": value1
+      - "key2": value2
+
+
