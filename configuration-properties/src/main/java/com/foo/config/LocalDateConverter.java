@@ -5,6 +5,9 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesBindin
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+/**
+ * Example of use of a Converter for ConfigPropertes
+ */
 @Component
 @ConfigurationPropertiesBinding
 public class LocalDateConverter implements Converter<String, LocalDate> {
