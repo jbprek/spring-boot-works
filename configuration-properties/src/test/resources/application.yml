@@ -1,10 +1,3 @@
-management:
-  endpoints:
-    web:
-      exposure:
-        include: env
-      base-path: /actuator
-#Configuration Properties to be read by ConfigDemoProperties
 #Configuration Properties to be read by ConfigDemoProperties
 config:
   demo:
@@ -27,7 +20,7 @@ config:
     simplepairs:
       key1: value1
       key2: value2
-
+    # nested objects
     nested:
       name: John
       birthDate: 1961-12-15
