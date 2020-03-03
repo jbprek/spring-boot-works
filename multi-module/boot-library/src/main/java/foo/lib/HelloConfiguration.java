@@ -6,8 +6,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 // TODO check why I get an error without
-@Primary
-@Component
+
 @ConfigurationProperties(prefix = "foo.lib.hello")
 @Data
 public class HelloConfiguration {
