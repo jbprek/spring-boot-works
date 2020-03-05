@@ -15,8 +15,8 @@
 
 
     <modules>
-        <module>configuration-properties</module>
-        <module>multi-module</module>
+        <module>env-wiring/configuration-properties</module>
+        <module>env-wiring/multi-module</module>
     </modules>
 
 </project>
