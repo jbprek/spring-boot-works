@@ -1,16 +1,17 @@
 package foo.lib;
 
+import javax.validation.constraints.NotBlank;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
-// TODO check why I get an error without
 
 @ConfigurationProperties(prefix = "foo.lib.hello")
+@Validated
 @Data
-public class HelloConfiguration {
+public class HelloConfigurationProperties {
 
+    @NotBlank
     private String name;
 
 }

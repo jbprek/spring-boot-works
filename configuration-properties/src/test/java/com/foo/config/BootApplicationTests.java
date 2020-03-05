@@ -2,6 +2,7 @@ package com.foo.config;
 
 import static org.assertj.core.api.Assertions.*;
 
+import java.util.HashMap;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -51,7 +52,10 @@ class BootApplicationTests {
     @Test
     @Order(6)
     void testSimpleMap() {
-        assertThat(configDemoProperties.getSimplePairs()).containsExactlyInAnyOrderEntriesOf(Map.of("key1", "value1", "key2", "value2"));
+        Map<String, String> expectedValues = new HashMap<>();
+        expectedValues.put("key1", "value1");
+        expectedValues.put("key2", "value2");
+        assertThat(configDemoProperties.getSimplePairs()).containsExactlyInAnyOrderEntriesOf(expectedValues);
     }
 
     @Test

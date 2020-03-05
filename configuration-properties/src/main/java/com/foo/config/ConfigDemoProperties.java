@@ -37,7 +37,6 @@ public class ConfigDemoProperties {
     @NotNull
     private LocalDate date;
 
-
     /**
      * Simple List Example
      */
