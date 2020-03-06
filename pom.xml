@@ -17,6 +17,7 @@
     <modules>
         <module>env-wiring/configuration-properties</module>
         <module>env-wiring/multi-module</module>
+        <module>mvc-rest/employees-hateoas-simple</module>
     </modules>
 
 </project>
