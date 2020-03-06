@@ -1,9 +1,10 @@
 #Various topics for Spring Boot
 ## Modules
 
-### configuration-properties
+### Wiring and Environmen
+#### env-wiring/configuration-properties
  Demonstrates various topics for extracting information from the Environment, @ConfigurationProperties use, etc
  
-### multi-module 
+#### env-wiring/multi-module 
 Demonstrates the use of components and configuration in a custom library module
   
