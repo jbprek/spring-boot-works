@@ -1,7 +1,7 @@
 package foo.app;
 
-import foo.app.service.AnotherService;
-import foo.lib.HelloService;
+import foo.app.service.BootApplicationService;
+import foo.lib.LibraryService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -10,15 +10,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Slf4j
 @AllArgsConstructor
-@SpringBootApplication(scanBasePackages = {"foo.lib", "foo.app"})
-public class BootAppApplication implements CommandLineRunner {
+@SpringBootApplication/*(scanBasePackages = {"foo.lib", "foo.app"})*/
+public class BootApplication implements CommandLineRunner {
 
-    private final HelloService component;
+    private final LibraryService component;
 
-    private final AnotherService anotherService;
+    private final BootApplicationService anotherService;
 
     public static void main(String[] args) {
-        SpringApplication.run(BootAppApplication.class, args);
+        SpringApplication.run(BootApplication.class, args);
     }
 
     @Override

@@ -14,6 +14,6 @@ public class BirthDate {
     @NotBlank
     private String name;
     @Past
-    private LocalDate birthDate;
+    private LocalDate dateOfBirth;
 
 }

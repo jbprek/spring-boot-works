@@ -2,8 +2,8 @@ package foo.app;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import foo.app.service.AnotherService;
-import foo.lib.HelloService;
+import foo.app.service.BootApplicationService;
+import foo.lib.LibraryService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,10 +12,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 class BootAppApplicationTests {
 
     @Autowired
-    private AnotherService serviceInApplication;
+    private BootApplicationService serviceInApplication;
 
     @Autowired
-    private HelloService serviceInLibrary;
+    private LibraryService serviceInLibrary;
 
     @Test
     void contextLoads() {

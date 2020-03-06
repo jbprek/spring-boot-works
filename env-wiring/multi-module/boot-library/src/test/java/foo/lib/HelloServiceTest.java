@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class HelloServiceTest {
 
 	@Autowired
-	private HelloService myService;
+	private LibraryService myService;
 
 	@Test
 	public void contextLoads() {

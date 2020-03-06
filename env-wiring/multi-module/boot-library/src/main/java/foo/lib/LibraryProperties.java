@@ -9,7 +9,7 @@ import org.springframework.validation.annotation.Validated;
 @ConfigurationProperties(prefix = "foo.lib.hello")
 @Validated
 @Data
-public class HelloConfigurationProperties {
+public class LibraryProperties {
 
     @NotBlank
     private String name;

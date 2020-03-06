@@ -2,14 +2,12 @@ package foo.lib;
 
 import lombok.AllArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.stereotype.Service;
 
-@Service
-@EnableConfigurationProperties(HelloConfigurationProperties.class)
+@EnableConfigurationProperties(LibraryProperties.class)
 @AllArgsConstructor
-public class HelloService {
+public class LibraryService {
 
-    private final HelloConfigurationProperties config;
+    private final LibraryProperties config;
 
     public String hello() {
         return "Hello from " + config.getName();
