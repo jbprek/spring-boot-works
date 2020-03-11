@@ -40,4 +40,6 @@ public class SpringHateoasSimplifiedApplication {
 	EvoInflectorLinkRelationProvider relProvider() {
 		return new EvoInflectorLinkRelationProvider();
 	}
+
+
 }

@@ -2,22 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>spring-boot-works</artifactId>
+    <groupId>com.foo</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>foo.springworks</groupId>
-  <artifactId>root</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <artifactId>spring-retry</artifactId>
   <packaging>pom</packaging>
-
-  <properties>
-    <maven.compiler.release>11</maven.compiler.release>
-  </properties>
-
-
   <modules>
-    <module>env-wiring</module>
-    <module>mvc-rest</module>
-    <module>spring-retry</module>
+    <module>rest-service</module>
+    <module>rest-service-consumer-retry-template</module>
   </modules>
 
 </project>

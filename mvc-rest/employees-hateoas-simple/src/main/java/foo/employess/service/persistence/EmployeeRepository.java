@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package foo.employess;
+package foo.employess.service.persistence;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -22,4 +22,4 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author Greg Turnquist
  */
-interface EmployeeRepository extends CrudRepository<Employee, Long> {}
+public interface EmployeeRepository extends CrudRepository<Employee, Long> {}

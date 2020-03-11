@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package foo.employess;
+package foo.employess.service.persistence;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
  * @author Greg Turnquist
  */
 @Component
-class DatabaseLoader {
+public class DatabaseLoader {
 
 	/**
 	 * Use Spring to inject a {@link EmployeeRepository} that can then load data. Since this will run only after the app

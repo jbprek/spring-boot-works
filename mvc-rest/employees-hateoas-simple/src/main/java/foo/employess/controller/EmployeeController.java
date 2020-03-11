@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package foo.employess;
+package foo.employess.controller;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+import foo.employess.service.persistence.Employee;
+import foo.employess.service.persistence.EmployeeRepository;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -42,7 +43,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Greg Turnquist
  */
 @RestController
-class EmployeeController {
+public class EmployeeController {
 
 	private final EmployeeRepository repository;
 
@@ -55,7 +56,7 @@ class EmployeeController {
 	 * {@link ResponseEntity} fluent API.
 	 */
 	@GetMapping("/employees")
-	ResponseEntity<CollectionModel<EntityModel<Employee>>> findAll() {
+	public ResponseEntity<CollectionModel<EntityModel<Employee>>> findAll() {
 
 		List<EntityModel<Employee>> employees = StreamSupport.stream(repository.findAll().spliterator(), false)
 				.map(employee -> new EntityModel<>(employee, //
@@ -69,7 +70,7 @@ class EmployeeController {
 	}
 
 	@PostMapping("/employees")
-	ResponseEntity<?> newEmployee(@RequestBody Employee employee) {
+	public ResponseEntity<?> newEmployee(@RequestBody Employee employee) {
 
 		try {
 			Employee savedEmployee = repository.save(employee);
@@ -92,7 +93,7 @@ class EmployeeController {
 	 * @param id
 	 */
 	@GetMapping("/employees/{id}")
-	ResponseEntity<EntityModel<Employee>> findOne(@PathVariable long id) {
+	public ResponseEntity<EntityModel<Employee>> findOne(@PathVariable long id) {
 
 		return repository.findById(id) //
 				.map(employee -> new EntityModel<>(employee, //
@@ -110,7 +111,7 @@ class EmployeeController {
 	 * @return
 	 */
 	@PutMapping("/employees/{id}")
-	ResponseEntity<?> updateEmployee(@RequestBody Employee employee, @PathVariable long id) {
+	public ResponseEntity<?> updateEmployee(@RequestBody Employee employee, @PathVariable long id) {
 
 		Employee employeeToUpdate = employee;
 		employeeToUpdate.setId(id);
