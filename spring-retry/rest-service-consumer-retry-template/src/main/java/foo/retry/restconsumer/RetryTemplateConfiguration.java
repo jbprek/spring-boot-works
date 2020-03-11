@@ -14,7 +14,7 @@ import org.springframework.web.client.HttpClientErrorException;
 @EnableRetry
 @Configuration
 public class RetryTemplateConfiguration {
-
+// TODO
     @Bean
     public RetryTemplate retryTemplate(
             SimpleRetryPolicy retryPolicy) {
@@ -32,6 +32,7 @@ public class RetryTemplateConfiguration {
     @ConditionalOnMissingBean
     SimpleRetryPolicy retryPolicy() {
         Map<Class<? extends Throwable>, Boolean> retryableExceptions = new HashMap<>();
+        // The retryable exception can be as configuration parameters
         retryableExceptions.put(HttpClientErrorException.class, true);
         SimpleRetryPolicy retryPolicy = new SimpleRetryPolicy(3, retryableExceptions);
         return retryPolicy;
