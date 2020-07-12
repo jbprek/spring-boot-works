@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package foo.employess.controller;
+package foo.customError.controller;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
-import foo.employess.service.persistence.Employee;
-import foo.employess.service.persistence.EmployeeRepository;
+import foo.customError.service.persistence.Employee;
+import foo.customError.service.persistence.EmployeeRepository;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;

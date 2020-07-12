@@ -10,10 +10,9 @@
   <packaging>pom</packaging>
 
 
-
-
   <modules>
     <module>employees-hateoas-simple</module>
+    <module>rest-custom-error-simple</module>
   </modules>
 
 </project>

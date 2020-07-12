@@ -1,6 +1,6 @@
-package foo.employess;
+package foo.customError;
 
-import foo.employess.controller.EmployeeController;
+import foo.customError.controller.EmployeeController;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.context.annotation.Bean;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package foo.employess.service.persistence;
+package foo.customError.service.persistence;
 
 import org.springframework.data.repository.CrudRepository;
 

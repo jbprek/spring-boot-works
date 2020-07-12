@@ -13,33 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package foo.employess.service.persistence;
 
-import org.springframework.boot.CommandLineRunner;
+package foo.customError;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import org.springframework.hateoas.server.core.EvoInflectorLinkRelationProvider;
 
 /**
- * Pre-load some data using a Spring Boot {@link CommandLineRunner}.
- *
  * @author Greg Turnquist
  */
-@Component
-public class DatabaseLoader {
+@SpringBootApplication
+public class SpringHateoasSimplifiedApplication {
+
+	public static void main(String... args) {
+		SpringApplication.run(SpringHateoasSimplifiedApplication.class);
+	}
 
 	/**
-	 * Use Spring to inject a {@link EmployeeRepository} that can then load data. Since this will run only after the app
-	 * is operational, the database will be up.
-	 *
-	 * @param repository
+	 * Format embedded collections by pluralizing the resource's type.
+	 * 
+	 * @return
 	 */
 	@Bean
-	CommandLineRunner init(EmployeeRepository repository) {
-
-		return args -> {
-			repository.save(new Employee("Frodo", "Baggins", "ring bearer"));
-			repository.save(new Employee("Bilbo", "Baggins", "burglar"));
-		};
+	EvoInflectorLinkRelationProvider relProvider() {
+		return new EvoInflectorLinkRelationProvider();
 	}
+
 
 }
