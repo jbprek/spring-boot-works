@@ -1,0 +1,11 @@
+com:
+  foo:
+    helloMessage: Default Hello Message
+
+---
+spring:
+  profiles:
+    active: dev
+com:
+  foo:
+    helloMessage: Developer Hello Message
