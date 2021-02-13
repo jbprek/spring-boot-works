@@ -4,8 +4,8 @@ com:
 
 ---
 spring:
-  profiles:
-    active: dev
+  profiles: dev
+
 com:
   foo:
     helloMessage: Developer Hello Message
