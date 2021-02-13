@@ -15,9 +15,12 @@
 
 
   <modules>
-    <module>env-wiring</module>
-    <module>mvc-rest</module>
+    <module>env-wiring/configuration-properties</module>
+    <module>env-wiring/multi-module/boot-app</module>
+    <module>env-wiring/multi-module/boot-library</module>
     <module>spring-retry</module>
+    <module>mvc-rest/hateoas/employees-simple</module>
+    <module>mvc-rest/error-handling/rest-custom-error-simple</module>
   </modules>
 
 </project>
