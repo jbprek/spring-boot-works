@@ -6,7 +6,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 /**
- * Example of use of a Converter for ConfigPropertes
+ * Example of use of a Converter for ConfigProperties
  */
 @Component
 @ConfigurationPropertiesBinding

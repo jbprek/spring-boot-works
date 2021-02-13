@@ -12,6 +12,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
+// Not needed since Boot 2.2
 @Component
 @Validated
 @Data
@@ -57,6 +58,6 @@ public class ConfigDemoProperties {
      * Nested Class
      */
     @Valid
-    BirthDate nested;
+    BirthData birthData;
 
 }

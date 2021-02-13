@@ -5,7 +5,6 @@ management:
         include: env
       base-path: /actuator
 #Configuration Properties to be read by ConfigDemoProperties
-#Configuration Properties to be read by ConfigDemoProperties
 config:
   demo:
     #Simple String property

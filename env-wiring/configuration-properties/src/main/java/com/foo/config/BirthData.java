@@ -10,7 +10,7 @@ import java.time.LocalDate;
  * Example class for nested use in Configuration Properties
  */
 @Data
-public class BirthDate {
+public class BirthData {
     @NotBlank
     private String name;
     @Past

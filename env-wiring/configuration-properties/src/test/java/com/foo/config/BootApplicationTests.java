@@ -61,8 +61,8 @@ class BootApplicationTests {
     @Test
     @Order(7)
     void testNested() {
-        assertThat(configDemoProperties.getNested().getName()).isEqualTo("John");
-        assertThat(configDemoProperties.getNested().getDateOfBirth()).isEqualTo(LocalDate.parse("1961-12-15"));
+        assertThat(configDemoProperties.getBirthData().getName()).isEqualTo("John");
+        assertThat(configDemoProperties.getBirthData().getDateOfBirth()).isEqualTo(LocalDate.parse("1961-12-15"));
     }
 
 
