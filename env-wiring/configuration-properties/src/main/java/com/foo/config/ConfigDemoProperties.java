@@ -7,6 +7,8 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -24,6 +26,12 @@ public class ConfigDemoProperties {
      */
     @NotBlank
     private String product;
+
+    /**
+     * java-time example
+     */
+    @Past
+    private LocalDate releaseDate;
 
     /**
      * Example of enum in the configuration

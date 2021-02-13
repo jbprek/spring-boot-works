@@ -15,12 +15,18 @@
 
 
   <modules>
+    <!-- Configuration Properties -->
     <module>env-wiring/configuration-properties</module>
+    <!-- Configuration Properties in a library-->
     <module>env-wiring/multi-module/boot-app</module>
     <module>env-wiring/multi-module/boot-library</module>
-    <module>spring-retry</module>
+    <module>mvc-rest/baseline/hello-rs-profiles-conf</module>
+    <!-- Basic REST Crud Ops H2 db -->
+    <module>mvc-rest/baseline/employess-simple-crud</module>
     <module>mvc-rest/hateoas/employees-simple</module>
     <module>mvc-rest/error-handling/rest-custom-error-simple</module>
+    <!-- WIP -->
+    <module>spring-retry</module>
   </modules>
 
 </project>

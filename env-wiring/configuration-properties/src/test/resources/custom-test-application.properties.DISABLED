@@ -1,0 +1,19 @@
+
+# Same format as main/resources/applications properties
+# Yaml test resources cannot run out of the box need to create PropertySourceFactory see:https://www.baeldung.com/spring-yaml-propertysource
+test.product=Marvelous
+test.delivery=dev
+test.date=2020-02-16
+test.products[0]=tomatos
+test.products[1]=cucumber
+test.products[2]=other
+test.deadlines[0]=2020-02-16
+test.deadlines[1]=2020-02-17
+#Simple Map<String,String>
+test.simplepairs.key1=value1
+test.simplepairs.key2=value2
+#Nested Object
+test.birthData.name=John
+test.birthData.dateOfBirth=1961-12-15
+
+
