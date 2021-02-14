@@ -28,4 +28,5 @@ docker run -p18080:8080  --env SPRING_PROFILES_ACTIVE=dev --env HELLO_MSG=ByPass
 docker run -p18080:8080  --env SPRING_PROFILES_ACTIVE=dev --env HELLO_MSG jbprek/hello-rs
 ``
 #TODO 
-- Test Containers Test
+- Expose Debug Ports, attach debuger
+- Test Containers
