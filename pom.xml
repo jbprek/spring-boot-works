@@ -25,6 +25,9 @@
     <module>mvc-rest/baseline/employess-simple-crud</module>
     <module>mvc-rest/hateoas/employees-simple</module>
     <module>mvc-rest/error-handling/rest-custom-error-simple</module>
+    <!-- Use of JIB with Spring profiles and env variables -->
+    <module>docker/hello-rs-profiles-conf-jib</module>
+
     <!-- WIP -->
     <module>spring-retry</module>
   </modules>
