@@ -77,7 +77,8 @@
                             <SPRING_PROFILES_ACTIVE>default</SPRING_PROFILES_ACTIVE>
                             <!--  Bypass a configuration property from the environment-->
                             <HELLO_MSG>Hello From JIB</HELLO_MSG>
-<!--                            <HELLO_MSG></HELLO_MSG>-->
+                            <!-- Jib does not allow an empty env var
+                             <HELLO_MSG></HELLO_MSG>-->
                         </environment>
                     </container>
                 </configuration>
