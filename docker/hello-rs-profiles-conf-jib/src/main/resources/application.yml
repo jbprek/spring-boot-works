@@ -1,0 +1,11 @@
+com:
+  foo:
+    helloMessage: ${HELLO_MSG:Default Hello Message}
+
+---
+spring:
+  profiles: dev
+
+com:
+  foo:
+    helloMessage:  ${HELLO_MSG:Developer Hello Message}
