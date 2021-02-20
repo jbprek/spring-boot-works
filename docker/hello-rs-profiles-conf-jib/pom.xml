@@ -19,6 +19,7 @@
         <jib.version>2.7.1</jib.version>
         <docker.image.name>hello-rs</docker.image.name>
         <docker.image.version>0.0.1</docker.image.version>
+        <docker.exposed.port>8080</docker.exposed.port>
     </properties>
 
     <dependencies>
@@ -71,7 +72,7 @@
                     </to>
                     <container>
                         <ports>
-                            <port>8080</port>
+                            <port>${docker.exposed.port}</port>
                         </ports>
                         <environment>
                             <SPRING_PROFILES_ACTIVE>default</SPRING_PROFILES_ACTIVE>
