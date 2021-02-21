@@ -27,6 +27,8 @@
     <module>mvc-rest/error-handling/rest-custom-error-simple</module>
     <!-- Use of JIB with Spring profiles and env variables -->
     <module>docker/hello-rs-profiles-conf-jib</module>
+    <!-- Spring Data -->
+    <module>data/hello-crud-rdbms</module>
 
     <!-- WIP -->
     <module>spring-retry</module>
