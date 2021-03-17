@@ -7,12 +7,14 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Component
-public class CorsConfiguration  implements RepositoryRestConfigurer {
+public class CorsConfiguration implements RepositoryRestConfigurer {
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 
-        cors.addMapping("/api/**");
+        cors
+            .addMapping("/api/**")
+            .allowedMethods("*");
     }
 }
 
