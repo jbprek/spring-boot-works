@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  database:
+    container_name: hsqldb
+    hostname: hsqldb
+    image: datagrip/hsqldb:latest
+    environment:
+      - HSQLDB_USER=user
+      - HSQLDB_PASSWORD=password
+    ports:
+      - "9001:9001"
+    #restart: on-failure
+
+
+

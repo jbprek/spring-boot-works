@@ -1,5 +1,6 @@
 package com.foo.emp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Version;
 
 
 @Entity
@@ -20,6 +22,10 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String description;
+    @Version
+    @JsonIgnore
+    private Long version;
+
 
     public Employee(String firstName, String lastName, String description) {
         this.firstName = firstName;

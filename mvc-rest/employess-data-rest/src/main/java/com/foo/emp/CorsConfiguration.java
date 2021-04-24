@@ -14,7 +14,8 @@ public class CorsConfiguration implements RepositoryRestConfigurer {
 
         cors
             .addMapping("/api/**")
-            .allowedMethods("*");
+            .allowedMethods("*")
+            .allowedHeaders("*");
     }
 }
 

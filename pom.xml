@@ -21,14 +21,19 @@
     <module>env-wiring/multi-module/boot-app</module>
     <module>env-wiring/multi-module/boot-library</module>
     <module>mvc-rest/baseline/hello-rs-profiles-conf</module>
+    <!-- Use of Spring Data Rest -->
+    <module>mvc-rest/employess-data-rest</module>
+    <module>mvc-rest/employess-data-rest-react-client</module>
     <!-- Basic REST Crud Ops H2 db -->
     <module>mvc-rest/baseline/employess-simple-crud</module>
     <module>mvc-rest/hateoas/employees-simple</module>
+
     <module>mvc-rest/error-handling/rest-custom-error-simple</module>
     <!-- Use of JIB with Spring profiles and env variables -->
     <module>docker/hello-rs-profiles-conf-jib</module>
     <!-- Spring Data -->
-    <module>data/hello-crud-rdbms</module>
+    <module>data/jpa/emp-dept-jpa</module>
+    <module>data/jdbc-template/emp-dept-jdbc</module>
 
     <!-- WIP -->
     <module>spring-retry</module>
