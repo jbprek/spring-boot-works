@@ -103,7 +103,7 @@ public class DepartmentRepository {
 
 
     public List<EmployShortInfoDto> findDepartmentEmployess(int deptId){
-        return findDepartmentEmployessJdbcCall(deptId);
+        return findDepartmentEmployessCallable(deptId);
     }
 
 
