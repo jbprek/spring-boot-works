@@ -18,9 +18,9 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @JdbcTest
-@Sql( scripts={"/sql/schema.sql"}, config = @SqlConfig(separator="^;"))
-@Sql(scripts={"/sql/data.sql"}, config = @SqlConfig(separator=";"))
-@Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts={"/sql/cleanup.sql"}, config = @SqlConfig(separator=";"))
+@Sql(scripts = {"/sql/schema.sql"}, config = @SqlConfig(separator = "^;") )
+@Sql(scripts = {"/sql/data.sql"}, config = @SqlConfig(separator = ";"))
+//@Sql(scripts = {"/sql/cleanup.sql"}, config = @SqlConfig(separator = ";"), executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DepartmentRepositoryTest {
@@ -31,13 +31,13 @@ class DepartmentRepositoryTest {
     private DepartmentRepository repository;
 
     @BeforeEach
-    public void beforeEach(){
+    public void beforeEach() {
         repository = new DepartmentRepository(jdbcTemplate);
     }
 
     @Order(1)
     @Test
-    public void testCount(){
+    public void testCount() {
         assertThat(repository.count()).isEqualTo(3);
     }
 
@@ -49,12 +49,12 @@ class DepartmentRepositoryTest {
         assertThat(optDpt.get().getName()).isEqualTo("IT");
     }
 
-    @Order(3)
-    @Test
-    public void findEmployeeByIdNotExists() {
-        Optional<Department> optDpt = repository.findById(9999);
-        assertThat(optDpt).isEmpty();
-    }
+//    @Order(3)
+//    @Test
+//    public void findEmployeeByIdNotExists() {
+//        Optional<Department> optDpt = repository.findById(9999);
+//        assertThat(optDpt).isEmpty();
+//    }
 
 
     @Order(4)
@@ -70,15 +70,22 @@ class DepartmentRepositoryTest {
         List<EmployShortInfoDto> dptList = repository.findDepartmentEmployess(1);
         assertThat(dptList).isNotEmpty().hasSize(2);
     }
+//
+//    @Order(6)
+//    @Test
+//    public void findSavedEmployeeById() {
+//        var department = Department.of(4, "IT");
+//        repository.create(department);
+//        assertThat(repository.findById(department.getId())).hasValue(department);
+//    }
 
 
-    @Order(10)
-    @Test
-    public void findSavedEmployeeById() {
-        var department = Department.of(4, "IT");
-        repository.create(department);
-        assertThat(repository.findById(department.getId())).hasValue(department);
-    }
+//    @Order(6)
+//    @Test
+//    public void testUpdateDepartmentName() {
+//        repository.updateDepartmentName(1, "Test New Name");
+//        assertThat(repository.findById(1).get().getName()).isEqualTo("Test New Name");
+//    }
 
 
 //    @Test

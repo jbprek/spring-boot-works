@@ -46,11 +46,11 @@ public class DepartmentsController {
         return  ResponseEntity.accepted().build();
     }
     
-    @PatchMapping(consumes =  MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Department> update(@RequestBody Department Department) {
-        repository.update(Department);
-        return new ResponseEntity(Department, HttpStatus.OK);
-    }
+//    @PatchMapping(consumes =  MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<Department> update(@RequestBody Department department) {
+//        repository.updateDepartmentName(department.getId(), department.getName());
+//        return new ResponseEntity(department, HttpStatus.OK);
+//    }
 
 
 }

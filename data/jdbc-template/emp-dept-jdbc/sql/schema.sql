@@ -15,6 +15,12 @@ create table employees
     foreign key (department_id) references departments (id) on delete cascade on update cascade
 );
 
+CREATE PROCEDURE sproc_update_dept_name(IN in_dept_id int, IN new_name VARCHAR(20))
+    MODIFIES SQL DATA
+begin atomic
+update departments set name=new_name where id=in_dept_id;
+end;
+
 create procedure sproc_dept_emp_rep1(IN in_dept_id int)
     reads sql data dynamic result sets 1
 begin atomic
@@ -23,7 +29,6 @@ declare result cursor with return for
     from departments d inner join employees e
                                   on d.id = e.department_id
     where d.id = in_dept_id;
--- you can have more more statements here ...
 open result;
 end;
 
