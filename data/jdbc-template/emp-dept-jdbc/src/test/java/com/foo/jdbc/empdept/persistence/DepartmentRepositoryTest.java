@@ -1,16 +1,11 @@
 package com.foo.jdbc.empdept.persistence;
 
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
-import org.springframework.test.context.jdbc.SqlGroup;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @JdbcTest
 @Sql(scripts = {"/sql/schema.sql"}, config = @SqlConfig(separator = "^;") )
 @Sql(scripts = {"/sql/data.sql"}, config = @SqlConfig(separator = ";"))
-//@Sql(scripts = {"/sql/cleanup.sql"}, config = @SqlConfig(separator = ";"), executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+@Sql(scripts = {"/sql/cleanup.sql"}, config = @SqlConfig(separator = ";"), executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DepartmentRepositoryTest {
@@ -35,17 +30,21 @@ class DepartmentRepositoryTest {
         repository = new DepartmentRepository(jdbcTemplate);
     }
 
+    
     @Order(1)
     @Test
     public void testCount() {
         assertThat(repository.count()).isEqualTo(3);
     }
 
+
+
     @Order(2)
     @Test
     public void findEmployeeById() {
         Optional<Department> optDpt = repository.findById(1);
         assertThat(optDpt).isNotEmpty();
+        assertThat(optDpt.get().getId()).isEqualTo(1);
         assertThat(optDpt.get().getName()).isEqualTo("IT");
     }
 
@@ -56,6 +55,7 @@ class DepartmentRepositoryTest {
 //        assertThat(optDpt).isEmpty();
 //    }
 
+    
 
     @Order(4)
     @Test
@@ -64,10 +64,12 @@ class DepartmentRepositoryTest {
         assertThat(dptList).isNotEmpty().hasSize(3);
     }
 
+    
+
     @Order(5)
     @Test
     void findDepartmentEmployess() {
-        List<EmployShortInfoDto> dptList = repository.findDepartmentEmployess(1);
+        List<EmployeeShortInfoDto> dptList = repository.findDepartmentEmployess(1);
         assertThat(dptList).isNotEmpty().hasSize(2);
     }
 //

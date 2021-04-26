@@ -1,6 +1,6 @@
-drop procedure if exists sproc_dept_emp_rep1;
-drop procedure if exists sproc_update_dept_name;
-drop procedure if exists sproc_find_dept_name;
+DROP PROCEDURE SPROC_DEPT_EMP_REP1;
+DROP PROCEDURE SPROC_UPDATE_DEPT_NAME;
+DROP PROCEDURE SPROC_FIND_DEPT;
 
-drop table if exists employees;
-drop table if exists departments;
+DROP TABLE EMPLOYEES;
+DROP TABLE DEPARTMENTS;
