@@ -1,42 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>foo.springworks</groupId>
-  <artifactId>root</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <groupId>foo.springworks</groupId>
+    <artifactId>root</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-  <properties>
-    <maven.compiler.release>11</maven.compiler.release>
-  </properties>
+    <properties>
+        <maven.compiler.release>11</maven.compiler.release>
+    </properties>
 
 
-  <modules>
-    <!-- Configuration Properties -->
-    <module>env-wiring/configuration-properties</module>
-    <!-- Configuration Properties in a library-->
-    <module>env-wiring/multi-module/boot-app</module>
-    <module>env-wiring/multi-module/boot-library</module>
-    <module>mvc-rest/baseline/hello-rs-profiles-conf</module>
-    <!-- Use of Spring Data Rest -->
-    <module>mvc-rest/employess-data-rest</module>
-    <module>mvc-rest/employess-data-rest-react-client</module>
-    <!-- Basic REST Crud Ops H2 db -->
-    <module>mvc-rest/baseline/employess-simple-crud</module>
-    <module>mvc-rest/hateoas/employees-simple</module>
+    <modules>
+        <!-- Configuration Properties -->
+        <module>env-wiring/configuration-properties</module>
+        <!-- Configuration Properties in a library-->
+        <module>env-wiring/multi-module/boot-app</module>
+        <module>env-wiring/multi-module/boot-library</module>
+        <module>mvc-rest/baseline/hello-rs-profiles-conf</module>
+        <!-- Use of Spring Data Rest -->
+        <module>mvc-rest/employess-data-rest</module>
+        <module>mvc-rest/employess-data-rest-react-client</module>
+        <!-- Basic REST Crud Ops H2 db -->
+        <module>mvc-rest/baseline/employess-simple-crud</module>
+        <module>mvc-rest/hateoas/employees-simple</module>
 
-    <module>mvc-rest/error-handling/rest-custom-error-simple</module>
-    <!-- Use of JIB with Spring profiles and env variables -->
-    <module>docker/hello-rs-profiles-conf-jib</module>
-    <!-- Spring Data -->
-    <module>data/jpa/emp-dept-jpa</module>
-    <module>data/jdbc-template/emp-dept-jdbc</module>
+        <module>mvc-rest/error-handling/rest-custom-error-simple</module>
+        <!-- Use of JIB with Spring profiles and env variables -->
+        <module>docker/baseline-jib</module>
+        <!--    Remove -->
+        <module>docker/hello-rs-profiles-conf-jib</module>
+        <!-- Spring Data -->
+        <module>data/jpa/emp-dept-jpa</module>
+        <module>data/jdbc-template/emp-dept-jdbc</module>
 
-    <!-- WIP -->
-    <module>spring-retry</module>
-  </modules>
+        <!-- WIP -->
+        <module>spring-retry</module>
+    </modules>
 
 </project>
