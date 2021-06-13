@@ -15,6 +15,7 @@
 
 
     <modules>
+        <module>aop/threshold-timed-warning</module>
         <!-- Configuration Properties -->
         <module>env-wiring/configuration-properties</module>
         <!-- Configuration Properties in a library-->
