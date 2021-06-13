@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>foo.springworks</groupId>
-    <artifactId>root</artifactId>
+    <artifactId>spring-boot-works</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -20,12 +20,9 @@
         <!-- Configuration Properties in a library-->
         <module>env-wiring/multi-module/boot-app</module>
         <module>env-wiring/multi-module/boot-library</module>
-        <module>mvc-rest/baseline/hello-rs-profiles-conf</module>
-        <!-- Use of Spring Data Rest -->
-        <module>mvc-rest/employess-data-rest</module>
-        <module>mvc-rest/employess-data-rest-react-client</module>
-        <!-- Basic REST Crud Ops H2 db -->
-        <module>mvc-rest/baseline/employess-simple-crud</module>
+        <!-- Basic REST Crud Ops H2 JPA db -->
+        <module>mvc-rest/baseline/mvcrest-jpa-crud-simple</module>
+
         <module>mvc-rest/hateoas/employees-simple</module>
 
         <module>mvc-rest/error-handling/rest-custom-error-simple</module>
@@ -36,9 +33,12 @@
         <!-- Spring Data -->
         <module>data/jpa/emp-dept-jpa</module>
         <module>data/jdbc-template/emp-dept-jdbc</module>
+        <!-- Spring Data Oracle-->
+        <module>data/oracle/jpa/ora-jpa-cases</module>
 
         <!-- WIP -->
-        <module>spring-retry</module>
+        <module>spring-retry/rest-service</module>
+        <module>spring-retry/rest-service-consumer-retry-template</module>
     </modules>
 
 </project>
