@@ -19,21 +19,19 @@ public class TimedThresholdWarningAspect {
 
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
-//        method.getAnnotation(TimedThresholdWarning.class);
-//
-//        TimedThresholdWarning myAnnotation = method.getAnnotation(TimedThresholdWarning.class);
-
+        TimedThresholdWarning annotation =  method.getAnnotation(TimedThresholdWarning.class);
         long start = System.currentTimeMillis();
+        try {
+            Object proceed = joinPoint.proceed();
+            return proceed;
+        } finally {
+            long executionTime = System.currentTimeMillis() - start;
 
-        Object proceed = joinPoint.proceed();
-
-        long executionTime = System.currentTimeMillis() - start;
-
-        if (executionTime > 1000) {
-            //log.warn("DELAYED {} time {} ms", method.getClass().getName()+"#"+method.getName(), executionTime);
-            log.warn("DELAYED \"{}\" time {} ms", signature, executionTime);
+            if (executionTime > annotation.thresholdMillis()) {
+                log.warn("{} elapsed {} ms", annotation.messageTag(), executionTime);
+            }
         }
 
-        return proceed;
+
     }
 }

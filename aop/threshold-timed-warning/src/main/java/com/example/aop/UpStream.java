@@ -14,7 +14,7 @@ public class UpStream {
     private DownStream downStream;
 
     @GetMapping
-    public ResponseEntity<DownStream.Data> hello() {
+    public ResponseEntity<DownStream.Response> hello() {
         return ResponseEntity.ok(downStream.serve());
     }
 
