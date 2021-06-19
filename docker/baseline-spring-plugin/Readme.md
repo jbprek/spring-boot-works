@@ -1,15 +1,15 @@
 # Simple Rest Hello Word Program
 
-Baseline hello rs example adapted to use jib docker plugin to produce docker images
+Baseline hello rs example adapted to use spring boot docker plugin to produce docker images
 
 #References
 
-##JIB
-[Google Official](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin)
+##Spring Docker docs
+[Spring Topical Guidel](https://spring.io/guides/topicals/spring-boot-docker/)
 
 ## Build
 ````
-mvn jib:dockerBuild
+mvn spring-boot:build-image
 ````
 
 #RUN

@@ -20,5 +20,11 @@ public class AppRestController {
         return ResponseEntity.ok(confProperties.getHelloMessage());
     }
 
+    @GetMapping(path = "secret")
+    public ResponseEntity<String> secret() {
+
+        return ResponseEntity.ok(confProperties.getSecret());
+    }
+
 
 }

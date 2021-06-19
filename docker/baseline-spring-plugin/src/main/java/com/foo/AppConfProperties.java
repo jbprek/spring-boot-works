@@ -16,4 +16,7 @@ public class AppConfProperties {
     @NotBlank
     private String helloMessage;
 
+    @NotBlank
+    private String secret;
+
 }

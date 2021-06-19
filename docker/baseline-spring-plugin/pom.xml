@@ -9,17 +9,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>spring-boot-rest</groupId>
-    <artifactId>hello-rs-profiles-conf-jib</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>hello-rs-profiles-conf-jib</name>
+    <artifactId>baseline-spring-plugin</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
+    <name>baseline-spring-plugin</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>11</java.version>
-        <jib.version>2.7.1</jib.version>
-        <docker.image.name>hello-rs</docker.image.name>
-        <docker.image.version>0.0.1</docker.image.version>
-        <docker.exposed.port>8080</docker.exposed.port>
     </properties>
 
     <dependencies>
@@ -36,6 +32,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
             <optional>true</optional>
         </dependency>
 
@@ -57,40 +59,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-                <version>${jib.version}</version>
-                <configuration>
-                    <to>
-                        <image>jbprek/${docker.image.name}</image>
-                        <tags>
-                            <tag>${docker.image.version}</tag>
-                            <tag>latest</tag>
-                        </tags>
-                    </to>
-                    <container>
-                        <ports>
-                            <port>${docker.exposed.port}</port>
-                        </ports>
-                        <environment>
-                            <SPRING_PROFILES_ACTIVE>default</SPRING_PROFILES_ACTIVE>
-                            <!--  Bypass a configuration property from the environment-->
-                            <HELLO_MSG>Hello From JIB</HELLO_MSG>
-                            <!-- Jib does not allow an empty env var
-                             <HELLO_MSG></HELLO_MSG>-->
-                        </environment>
-                    </container>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>build</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

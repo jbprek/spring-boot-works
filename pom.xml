@@ -15,6 +15,7 @@
 
 
     <modules>
+        <!-- AOP -->
         <module>aop/threshold-timed-warning</module>
         <!-- Configuration Properties -->
         <module>env-wiring/configuration-properties</module>
@@ -27,10 +28,12 @@
         <module>mvc-rest/hateoas/employees-simple</module>
 
         <module>mvc-rest/error-handling/rest-custom-error-simple</module>
-        <!-- Use of JIB with Spring profiles and env variables -->
+        <!-- DOCKER -->
+        <!-- Use of JIB  -->
+        <module>docker/baseline-spring-plugin</module>
+        <!-- Use of Spring Plugin to build docker images -->
         <module>docker/baseline-jib</module>
-        <!--    Remove -->
-        <module>docker/hello-rs-profiles-conf-jib</module>
+
         <!-- Spring Data -->
         <module>data/jpa/emp-dept-jpa</module>
         <module>data/jdbc-template/emp-dept-jdbc</module>
