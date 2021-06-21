@@ -22,6 +22,8 @@
         <!-- Configuration Properties in a library-->
         <module>env-wiring/multi-module/boot-app</module>
         <module>env-wiring/multi-module/boot-library</module>
+        <!-- Trivial Rest service -->
+        <module>mvc-rest/baseline/simple</module>
         <!-- Basic REST Crud Ops H2 JPA db -->
         <module>mvc-rest/baseline/mvcrest-jpa-crud-simple</module>
 

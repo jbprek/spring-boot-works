@@ -6,4 +6,5 @@
 
 ## Articles
 [Understanding Spring Boot](https://geowarin.com/understanding-spring-boot/)
+[Baeldung Rest Exception Handling](https://www.baeldung.com/exception-handling-for-rest-with-spring)
 

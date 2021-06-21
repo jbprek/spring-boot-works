@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+com:
+  foo:
+    helloMessage:  ${HELLO_VAR:Hello from default profile}
+    secret: ${SECRET_VAR:Secret from default profile}
+
+---
+
+spring:
+  profiles: docker
+com:
+  foo:
+    helloMessage: ${HELLO_VAR:Hello from Docker profile}
+    secret: ${SECRET_VAR:Secret from Docker profile}
